@@ -26,6 +26,20 @@ sudo scp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 export KUBECONFIG=~/.kube/config
 ```
 
+## Steps to Allow Passwordless Sudo
+1. Open the Sudoers File for Editing:
+
+Use the visudo command to safely edit the sudoers file:
+```bash
+sudo visudo
+```
+2. Add the Passwordless Sudo Rule:
+
+Scroll down to the end of the file and add the following line:
+```bash
+$youruser ALL=(ALL) NOPASSWD: ALL
+```
+
 
 # Terraform Setup
 ### Store AWS Access Keys
