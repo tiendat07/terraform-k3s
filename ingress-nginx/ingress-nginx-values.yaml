@@ -1,0 +1,15 @@
+controller:
+  hostNetwork: true
+  service:
+    type: LoadBalancer
+  kind: DaemonSet
+  hostPort:
+    enabled: true
+    ports:
+      http: 80  # Must match containerPort
+      https: 443  # Must match containerPort
+  tolerations:
+    - key: "key"
+      operator: "Equal"
+      value: "value"
+      effect: "NoSchedule"
