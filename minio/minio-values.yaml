@@ -8,5 +8,7 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: 1024m
 defaultBuckets: "lakehouse, airflow, risingwave, kafka"
+service:
+  type: LoadBalancer
 persistence:
   size: 50Gi
